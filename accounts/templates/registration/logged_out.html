@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Ecy: Come Back {% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 logIn">
+            <p class="multicolor">You have achieved the logout. It was a great time, see ya!</p>
+            <a href="{% url 'login' %}" class="btn btn-primary">Login again</a>
+        </div>
+        <br>
+        <div class="col-md-6 offset-md-3">
+            <p class="multicolor2">Go to Home</p>
+            <a href="{% url 'home' %}" class="btn btn-multicolor2">click HERE</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

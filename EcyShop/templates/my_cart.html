@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block title %}Ecy: MyCart{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 lineartext>Welcome, {{ request.user.username }}</h2>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% if order %}
+                {% for product in order.products.all %}
+                    <tr>
+                        <td>{{ product.title }}</td>
+                        <td>{{ product.description|truncatechars:25 }}</td>
+                        <td>
+                            <!-- Adjust quantity with + and - buttons -->
+                            <span onclick="adjustQuantity('{{ product.id }}', -1)">-</span>
+                            {{ product.order_set.first.quantity }}
+                            <span onclick="adjustQuantity('{{ product.id }}', 1)">+</span>
+                        </td>
+                        <td>${{ product.price }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="4">No items in your cart.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+    <!-- Discount Code Input and Place Order Button -->
+    <form method="post">
+        {% csrf_token %}
+        <label for="discount_code">Discount Code:</label>
+        <input type="text" id="discount_code" name="discount_code">
+        <button type="submit" class="btn btn-primary">Apply</button>
+    </form>
+    
+    <!-- Place Order button at the bottom -->
+    <button type="button" class="btn btn-danger">Place Order</button>
+</div>
+
+<script>
+    function adjustQuantity(productId, change) {
+        // Fetch CSRF token
+        const csrftoken = getCookie('csrftoken');
+
+        // AJAX request to update quantity
+        fetch(`/update_quantity/${productId}/${change}/`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': csrftoken,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ quantityChange: change })
+        })
+        .then(response => {
+            if (response.ok) {
+                // If the update was successful, update the displayed quantity
+                const quantityElement = document.getElementById(`quantity_${productId}`);
+                const currentQuantity = parseInt(quantityElement.innerText);
+                quantityElement.innerText = currentQuantity + change;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
+    // Function to get CSRF token from cookies (same as previous code snippet)
+    // ... (getCookie function)
+</script>
+{% endblock %}

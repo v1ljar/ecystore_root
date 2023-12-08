@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} Ecy: Join The Dark Side {% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="my-form">
+            <h2 class="multicolor">Registration to the Legion Page</h2>
+            {% for message in messages %}
+                <p class="text-danger">{{ message }}</p>
+            {% endfor %}
+            <form method="post">
+                {% csrf_token %}
+                <label for="username">Username</label>
+                <input type="text" class="form-control" maxlength="50" id="username" name="username"/>
+                <label for="password">Password</label>
+                <input type="password" class="form-control" maxlength="50" id="password" name="password"/>
+                <label for="password2">Repeat Password</label>
+                <input type="password" class="form-control" maxlength="50" id="password2" name="password2"/>
+                <button type="submit" class="btn btn-primary">Join the Crew</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

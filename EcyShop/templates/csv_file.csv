@@ -1,0 +1,39 @@
+title,description,origin,price,discount_percentage,brand,category
+T-Shirt,"Comfortable cotton t-shirt","USA",19.99,0,Adidas,Tops
+Sneakers,"Lightweight running shoes","China",49.99,10,Nike,Shoes
+Jeans,"Classic denim jeans","Italy",39.99,5,Levi's,Bottoms
+Backpack,"Durable backpack for everyday use","Germany",29.99,0,Eastpak,Bags
+Hoodie,"Warm and cozy hoodie","Sweden",34.99,15,H&M,Tops
+Running Shorts,"Quick-dry running shorts","Vietnam",24.99,0,Puma,Bottoms
+Sunglasses,"UV-protection stylish sunglasses","France",14.99,0,Ray-Ban,Accessories
+Dress,"Elegant evening dress","UK",59.99,20,Zara,Dresses
+Hat,"Adjustable baseball cap","China",9.99,0,New Era,Hats
+Water Bottle,"Reusable stainless steel water bottle","Germany",14.99,0,Klean Kanteen,Accessories
+Watch,"Waterproof digital watch","Japan",99.99,15,Casio,Watches
+Belt,"Leather belt","Italy",29.99,0,Gucci,Accessories
+Socks,"Pack of 5 cotton socks","China",9.99,0,Calvin Klein,Underwear
+Scarf,"Wool winter scarf","Scotland",19.99,0,Burberry,Accessories
+Coat,"Warm winter coat","USA",129.99,20,The North Face,Outerwear
+Gloves,"Leather gloves","Italy",24.99,0,Prada,Accessories
+Swimsuit,"One-piece swimsuit","China",29.99,10,Speedo,Swimwear
+Tie,"Silk tie","UK",19.99,0,Hugo Boss,Accessories
+Wallet,"Leather wallet","Italy",39.99,0,Armani,Accessories
+Perfume,"Floral fragrance for women","France",49.99,10,Chanel,Fragrances
+Lipstick,"Matte lipstick","USA",19.99,0,MAC,Cosmetics
+Earrings,"Gold hoop earrings","Italy",29.99,0,Pandora,Jewelry
+Necklace,"Silver pendant necklace","USA",24.99,0,Tiffany & Co.,Jewelry
+Bracelet,"Beaded charm bracelet","Germany",19.99,0,Thomas Sabo,Jewelry
+Ring,"Diamond engagement ring","Belgium",999.99,0,Blue Nile,Jewelry
+Anklet,"Gold anklet","India",14.99,0,CaratLane,Jewelry
+Hair Clip,"Decorative hair clip","China",4.99,0,Shein,Accessories
+Nail Polish,"Long-lasting nail polish","USA",7.99,0,OPI,Cosmetics
+Mascara,"Volumizing mascara","France",24.99,0,Dior,Cosmetics
+Foundation,"Liquid foundation for all skin types","USA",34.99,0,Estée Lauder,Cosmetics
+Blush,"Powder blush","Italy",19.99,0,NARS,Cosmetics
+Eyeliner,"Waterproof eyeliner","Germany",14.99,0,Essence,Cosmetics
+Lip Gloss,"Shiny lip gloss","USA",9.99,0,Fenty Beauty,Cosmetics
+Concealer,"Full coverage concealer","USA",19.99,0,Tarte,Cosmetics
+Highlighter,"Illuminating highlighter","USA",29.99,0,Bobbi Brown,Cosmetics
+Bronzer,"Matte bronzer","USA",29.99,0,Too Faced,Cosmetics
+Eyeshadow Palette,"Palette with 12 eyeshadows","USA",49.99,0,Urban Decay,Cosmetics
+Makeup Brushes,"Set of 5 makeup brushes","China",19.99,0,Real Techniques,Accessories

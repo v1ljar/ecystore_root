@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body settings */
+body {
+    background-image: url('/static/EcyShop/background.png');
+    background-position: center;
+    background-position-y: 120px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* Navbar settings */
+.navbar {
+    height: 120px !important;
+    width: 100% !important;
+    position: relative;
+    background-image: url('/static/EcyShop/backcard.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden; /* Ensures the background image doesn't overflow */
+}
+
+/* Navbar brand positioning */
+.navbar .navbar-brand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure the brand stays above the background */
+}
+
+/* Navbar link styles */
+.navbar-nav .nav-link {
+    background: linear-gradient(to right, 
+     orange, red, orange, red, orange, red);
+    -webkit-background-clip: text; /* Safari, Chrome, other WebKit browsers */
+    -moz-background-clip: text; /* Firefox */
+    -o-background-clip: text; /* Opera */
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent; /* Safari, Chrome, other WebKit browsers */
+    color: transparent;
+    text-align: center;
+    justify-content: left;
+    position: flex;
+    font-size: large;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.my-form {
+    max-width: 400px; /* Adjust the maximum width as needed */
+}
+
+.my-form input {
+    width: calc(100% - 20px); /* Adjust width to allow for padding */
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.my-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.my-form h2 {
+    color: rgb(23, 23, 224) !important;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.my-form p {
+    color: blue !important;
+}
+
+.nav-item {
+    color: blue !important;
+}
+
+.card-title {
+    color:blue !important;
+}
+
+.multicolor {
+    background: linear-gradient(to right, 
+        white,violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text; /* Safari, Chrome, other WebKit browsers */
+    -moz-background-clip: text; /* Firefox */
+    -o-background-clip: text; /* Opera */
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent; /* Safari, Chrome, other WebKit browsers */
+    color: transparent; /* Fallback for other browsers */
+    display: inline-block;
+}
+
+.multicolor2 {
+    background: linear-gradient(to right, 
+        green, red, yellow, pink, red);
+    -webkit-background-clip: text; /* Safari, Chrome, other WebKit browsers */
+    -moz-background-clip: text; /* Firefox */
+    -o-background-clip: text; /* Opera */
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent; /* Safari, Chrome, other WebKit browsers */
+    color: transparent; /* Fallback for other browsers */
+    display: inline-block;
+}
+
+.lineartext {
+    background: linear-gradient(to bottom, 
+        indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text; /* Safari, Chrome, other WebKit browsers */
+    -moz-background-clip: text; /* Firefox */
+    -o-background-clip: text; /* Opera */
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent; /* Safari, Chrome, other WebKit browsers */
+    color: transparent; /* Fallback for other browsers */
+    display: inline-block;
+    font-size: 40px;
+}
+
+.material-symbols-outlined {
+    color:red !important;
+    text-align: top !important;
+}
+
+.form-control.my-sm-0 {
+    max-width: 150px; /* Adjust the width */
+    height: 25px; /* Adjust the height */
+}
+
+.form-inline.btnsearch {
+    max-width: 40px;
+    height: 15px;
+    text-size-adjust: 25px;
+}

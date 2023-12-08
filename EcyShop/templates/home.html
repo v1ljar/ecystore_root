@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  EcyShop | Home
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    {% for product in products %}
+      <div class="card m-2 multicolor2" style="width: 18rem">
+        <div class="product">
+          <h5 class="card-title">{{product.title}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <h6 class="card-subtitle mb-2 text-body-secondary">${{product.price}}</h6>
+          <button onclick="addToCart('{{ product.id }}') " class="btn btn-outline-success me-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-plus-fill" viewBox="0 0 16 16">
+              <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"/>
+            </svg>
+          </button>
+          <button type="button" class="btn btn-outline-secondary" href="#">
+            More Details
+          </button>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <nav>
+    <ul class="pagination">
+      {% if page_obj.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        </li>
+      {% else %}
+        <li class="page-item disabled">
+          <a class="page-link">Previous</a>
+        </li>
+      {% endif %}
+      {% for page in page_obj.paginator.page_range %}
+        {% if page == page_obj.number %}
+          <li class="page-item active" aria-current="True">
+            <a class="page-link" href="?page={{page}}">{{page}}</a>
+          </li>
+        {% else %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{page}}">{{page}}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+        </li>
+      {% else %}
+        <li class="page-item">
+          <a class="page-link disabled">Next</a>
+        </li>
+      {% endif %}
+
+    </ul>
+  </nav>
+
+<script>
+    function addToCart(productId) {
+        // Fetch CSRF token
+        const csrftoken = getCookie('csrftoken');
+
+        // AJAX request to add product to cart
+        fetch(`/add_to_cart/${productId}`, {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': csrftoken,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ productId: productId })
+        })
+        .then(response => {
+            if (response.ok) {
+                // If product is added successfully, update the icon in the navbar
+                const cartIcon = document.getElementById('cart-icon');
+                cartIcon.style.color = 'red'; // Change color to red to indicate items in the cart
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
+    // Function to get CSRF token from cookies (if you haven't implemented it yet)
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+</script>
+
+{% endblock content %}
